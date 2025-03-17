@@ -6,8 +6,6 @@ import Header from "@/components/myComponents/header";
 import {ClerkProvider}  from "@clerk/nextjs"
 import { dark } from '@clerk/themes'
 import { Toaster } from "sonner";
-// import SnowflakeCursor from "@/utils/CustomeCursor";
-import CanvasCursor from "@/utils/CanvasCursor";
 
 
 
@@ -43,8 +41,7 @@ export default function RootLayout({
 
             <main className="min-h-screen">
             {children}
-            {/* <SnowflakeCursor/> */}
-            <CanvasCursor/>
+            
             
             </main>
             <Toaster richColors />
