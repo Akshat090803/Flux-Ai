@@ -26,7 +26,7 @@ import { entriesToMarkdown } from "@/lib/markDown/helper";
 import { resumeSchema } from "@/lib/zod schema/onboardingSchema";
 import type{ Resume } from "@prisma/client";
 
-import html2pdf from "html2pdf.js";
+import html2pdf, { Html2PdfOptions } from "html2pdf.js";
 // import html2pdf from "html2pdf.js/dist/html2pdf.min.js";
 // import { jsPDF } from "jspdf";
 // import html2canvas from "html2canvas";
@@ -143,7 +143,12 @@ export default function ResumeBuilder({initialContent}:{initialContent:string | 
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
       };
 
-      await html2pdf().set(opt).from(element).save();
+      if(element){
+        await html2pdf().set(opt as Html2PdfOptions).from(element).save();
+      }
+      
+      
+
     } catch (error) {
       console.error("PDF generation error:", error);
     } finally {
@@ -166,6 +171,7 @@ export default function ResumeBuilder({initialContent}:{initialContent:string | 
       console.error("Save error:", error);
     }
   };
+  
 
   return (
     <div data-color-mode="light" className="space-y-4">
