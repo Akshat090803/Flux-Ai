@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/data/features.tsx", "src/lib/prismaClient.js", "src/hooks/use-fetch.tsx", "src/lib/markDown/helper.js", "src/utils/useCanvasCursor.js"],
   "exclude": ["node_modules"]
 }
