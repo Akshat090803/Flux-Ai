@@ -35,8 +35,8 @@ import { Button } from "@/components/ui/button";
 import { getSingleCoverLetter } from "@/actions/cover-letter";
 import CoverLetterPreview from "../_component/letterPreview";
 
-export default async function EditCoverLetterPage({ params }: { params: { id: string } }) {
-  const { id } = params; // Remove 'await' here
+export default async function EditCoverLetterPage( {params}:{params:Promise<{id:string}>}) {
+  const { id } = await params; // Remove 'await' here
   const coverLetter = await getSingleCoverLetter(id);
 
   return (
