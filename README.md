@@ -72,12 +72,9 @@ We welcome contributions! If you'd like to contribute to Flux AI, please follow 
 * Skill assessment and development recommendations.
 * More in depth Industry insights.
 
-## License
-
-This project is licensed under the [License Name] License. See the `LICENSE` file for more information.
 
 ## Contact
 
-For questions or support, please contact [your email or contact information].
+For questions or support, please contact akshatjain702333@gmail.com.
 
 Thank you for using Flux AI!
