@@ -90,11 +90,11 @@ model IndustryInsight {
   
   // Industry trends
   growthRate    Float     // Industry growth rate
-  demandLevel   demandLevelenum    // "High", "Medium", "Low"
+  demandLevel   String   // "High", "Medium", "Low"
   topSkills     String[]  // Most in-demand skills
   
   // Market conditions
-  marketOutlook  marketOutlookenum    // "Positive", "Neutral", "Negative"
+  marketOutlook  String    // "Positive", "Neutral", "Negative"
   keyTrends     String[]  // Array of current industry trends
   
   // Learning suggestions
@@ -105,17 +105,4 @@ model IndustryInsight {
 
   @@index([industry])  //create a index table  on user id which make faster to search on  basis of industry
 }
-
-
-enum demandLevelenum{
-  High
-  Medium
-  Low
-}
-enum marketOutlookenum{
-  Positive
-  Neutral
-  Medium
-}
-
 

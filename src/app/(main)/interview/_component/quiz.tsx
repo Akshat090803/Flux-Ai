@@ -174,7 +174,7 @@ export default function Quiz(){
             ? "Next Question"
             : (savingResult ? (
               <>
-              <Loader2 className="h-4 w-4 animate-spin"/> Submitting...
+              <Loader2 className="h-4 w-4 animate-spin"/>Submitting...
               </>
             ):"Finish")}
         </Button>
