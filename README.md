@@ -43,7 +43,7 @@ Flux AI is built using the following technologies:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [repository URL]
+    git clone https://github.com/Akshat090803/Flux-Ai.git
     ```
 2.  **Installation:**
     * Follow the installation instructions provided in the project's documentation (if applicable).
