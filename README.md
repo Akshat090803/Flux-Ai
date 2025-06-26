@@ -1,6 +1,17 @@
-# Flux AI: Your AI-Powered Career Coach
+# ⚡ Flux AI: Your AI-Powered Career Coach
 
 Welcome to Flux AI, your comprehensive AI-driven career coach designed to empower you in your professional journey.
+
+---
+
+## 🧪 Demo Login Credentials
+
+- 👤 **Email:** `user@example.com`  
+- 🔑 **Password:** `User@fluxai`
+
+> Use this test account to explore all features without signing up! 🚀
+
+---
 
 ## Overview
 
@@ -12,6 +23,8 @@ Flux AI provides a suite of tools and resources to help you excel in your career
 * **Weekly Industry Insights:** Stay up-to-date with the latest industry trends and developments.
 * **Personalized Career Options Recommendation:** Discover relevant career paths and opportunities based on your skills and interests.
 * **And much more!** We are constantly adding new features to help you succeed.
+
+---
 
 ## Features
 
@@ -28,6 +41,8 @@ Flux AI provides a suite of tools and resources to help you excel in your career
     * Explore recommended career options based on your skills, experience, and goals.
     * Discover new opportunities and career paths.
 
+---
+
 ## Tech Stack
 
 Flux AI is built using the following technologies:
@@ -38,6 +53,8 @@ Flux AI is built using the following technologies:
 * **Background Jobs:** Inngest
 * **ORM:** Prisma
 * **Database:** PostgreSQL
+
+---
 
 ## Getting Started
 
@@ -55,6 +72,8 @@ Flux AI is built using the following technologies:
 4.  **Running the Application:**
     * Start the application according to the project's documentation (e.g., `npm run dev` or `yarn dev`).
 
+---
+
 ## Contributing
 
 We welcome contributions! If you'd like to contribute to Flux AI, please follow these steps:
@@ -64,6 +83,8 @@ We welcome contributions! If you'd like to contribute to Flux AI, please follow 
 3.  Make your changes and commit them.
 4.  Push your changes to your fork.
 5.  Submit a pull request.
+
+---
 
 ## Future Enhancements
 
