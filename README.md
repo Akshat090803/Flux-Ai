@@ -4,7 +4,7 @@ Welcome to Flux AI, your comprehensive AI-driven career coach designed to empowe
 
 ---
 
-## 🧪 Demo Login Credentials
+## 🔐 Demo Login Credentials
 
 - 👤 **Email:** `user@example.com`  
 - 🔑 **Password:** `User@fluxai`
