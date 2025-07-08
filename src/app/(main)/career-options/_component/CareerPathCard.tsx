@@ -16,7 +16,7 @@ import {
 //     <Card className="rounded-[8px]">
 //   <CardHeader>
 //     <CardTitle>{career.Role}</CardTitle>
-//     <CardDescription>Expect an average annual salary of {`💲${career.Average_salary}`}</CardDescription>
+//     <CardDescription>Expect an average annual salary of {`${career.Average_salary}`}</CardDescription>
 //   </CardHeader>
 //   <CardContent>
 //     <span>Role Description</span>
