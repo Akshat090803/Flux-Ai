@@ -7,7 +7,8 @@ import { revalidatePath } from "next/cache";
 
 
 const genAi=new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string)
-const model=genAi.getGenerativeModel({ model: "gemini-1.5-flash" })
+
+const model=genAi.getGenerativeModel({ model: "gemini-2.5-flash" })
 
 export async function getAllCoverLetters() {
   const { userId } = await auth();

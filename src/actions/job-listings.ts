@@ -6,7 +6,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
  export interface CareerPath {
   Role: string;
@@ -80,7 +80,7 @@ const response_in_text=response.text();
 const cleanedText=response_in_text.replace(/```(?:json)?\n?/g, "").trim(); //used regualar expression remove ``` and other unnneccessary things and get only Json object
 
 const parsedArr= JSON.parse(cleanedText) ; //convert JSON object to normal javascript object and return
-console.log(parsedArr)
+// console.log(parsedArr)
 return parsedArr as CareerPathList;
 
     } catch (error) {
