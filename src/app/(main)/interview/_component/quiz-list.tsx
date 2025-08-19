@@ -58,7 +58,7 @@ export  function QuizList({assessments}:childPropType) {
               >
                 <CardHeader>
                   <CardTitle className="gradient-title text-2xl">
-                    Quiz {i + 1}
+                    Quiz {i + assessments.length}
                   </CardTitle>
                   <CardDescription className="flex justify-between w-full">
                     <div>Score: {assessment.quizScore.toFixed(1)}%</div>
