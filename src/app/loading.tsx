@@ -7,12 +7,17 @@ import React from 'react';
 export default function Loading() {
   return (
     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-background z-1000">
-      <div className="text-2xl font-bold flex gap-4">
-        <Loader2 className='animate-spin h-8 w-8'/>
-        Loading...
-
-.
-        </div>
+   <div className="loader">
+     <div className="square" id="sq1" />
+        <div className="square" id="sq2" />
+        <div className="square" id="sq3" />
+        <div className="square" id="sq4" />
+        <div className="square" id="sq5" />
+        <div className="square" id="sq6" />
+        <div className="square" id="sq7" />
+        <div className="square" id="sq8" />
+        <div className="square" id="sq9" />
+</div>
     </div>
   );
 }

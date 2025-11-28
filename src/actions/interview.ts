@@ -1,12 +1,11 @@
-"use server"
+"use server";
 import { prisma } from "@/lib/prismaClient";
 import { auth } from "@clerk/nextjs/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import type{ Assessment } from "@prisma/client";
-
+import type { Assessment } from "@prisma/client";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
-const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite-preview-06-17" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
 export interface QuestionType {
   question: string;
@@ -15,17 +14,16 @@ export interface QuestionType {
   explanation: string;
 }
 
-export interface questionResultsType  {
-  question: string
-  answer: string
-  userAnswer: string
-  isCorrect: boolean
-  explanation: string
-};
+export interface questionResultsType {
+  question: string;
+  answer: string;
+  userAnswer: string;
+  isCorrect: boolean;
+  explanation: string;
+}
 
 //!This will genrate Quiz using gemini
-export async function generateQuiz(){
-
+export async function generateQuiz() {
   //!check user authenticated or not
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
@@ -64,20 +62,18 @@ export async function generateQuiz(){
   `;
 
   try {
-    const result=await model.generateContent(prompt);
-    const response=result.response;
-    const response_in_text=response.text();
+    const result = await model.generateContent(prompt);
+    const response = result.response;
+    const response_in_text = response.text();
     const cleanedText = response_in_text.replace(/```(?:json)?\n?/g, "").trim();
     const quiz = JSON.parse(cleanedText);
 
-    return quiz.questions
-    
+    return quiz.questions;
   } catch (error) {
     console.error("Error generating quiz:", error);
     throw new Error("Failed to generate quiz questions");
   }
 }
-
 
 //!This function will save users quiz result in Assessment model
 //?i.e, create  a new entry in Assesmnet model
@@ -113,7 +109,6 @@ export async function generateQuiz(){
 //     //we get all questions which are answered worng by user
 //     const wrongAnswers = questionResults.filter((q) => !q.isCorrect);
 
-
 //     //!Genrating improvement tip
 //      // Only generate improvement tips if there are wrong answers
 
@@ -139,7 +134,7 @@ export async function generateQuiz(){
 //       Keep the response under 2 sentences and make it encouraging.
 //       Don't explicitly mention the mistakes, instead focus on what to learn/practice.
 //     `;
-   
+
 //     //!using gemini genrate a imporvement tip and prompt will be improvementPrompt
 //     try {
 //       const tipResult = await model.generateContent(improvementPrompt);
@@ -153,7 +148,7 @@ export async function generateQuiz(){
 //     }
 
 //     //?the above part of creating improvemnt prompt and t=improvemnt tip will only run when there are some wrong answers by user
-     
+
 //     //!Create a new entry in assessment Model
 //     try {
 //       const assessment = await prisma.assessment.create({
@@ -165,16 +160,14 @@ export async function generateQuiz(){
 //           improvementTip,
 //         },
 //       });
-  
+
 //       return assessment;
 //     } catch (error) {
 //       console.error("Error saving quiz result:", (error as Error)?.message);
 //       throw new Error("Failed to save quiz result "+(error as Error)?.message);
 //     }
-  
-// } 
 
-
+// }
 
 // export async function saveQuizResult(
 //   questions: QuestionType[],
@@ -269,7 +262,7 @@ export async function saveQuizResult(
   //   //!This questionResults array is for question field in Assessment model in prisma
   // ? questions     Json[]    // Array of {question, answer, userAnswer, isCorrect}
 
-  const questionResults:questionResultsType[] = questions.map((q, index) => ({
+  const questionResults: questionResultsType[] = questions.map((q, index) => ({
     question: q.question, // The question text
     answer: q.correctAnswer, // The correct answer
     userAnswer: answers[index], // The user's answer
@@ -335,7 +328,6 @@ export async function saveQuizResult(
   }
 }
 
-
 //!for /interview page
 //?will return all the assesments taken by user
 export async function getAssessments() {
@@ -344,13 +336,12 @@ export async function getAssessments() {
 
   const user = await prisma.user.findUnique({
     where: { clerkUserId: userId },
-  
   });
 
   if (!user) throw new Error("User not found");
 
   try {
-    const assessments:Assessment[] = await prisma.assessment.findMany({
+    const assessments: Assessment[] = await prisma.assessment.findMany({
       where: {
         userId: user.id,
       },
